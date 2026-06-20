@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>QCM Galop 6 – 20 juin 2026</title>
+  <style>
+    :root {
+      --primary: #3d2b1f;
+      --secondary: #7a5c2e;
+      --accent: #c8a06a;
+      --light: #f7f2ea;
+      --card: #fffcf5;
+      --correct: #276843;
+      --correct-bg: #e8f5ee;
+      --wrong: #b0291f;
+      --wrong-bg: #fdf0ee;
+      --border: #e0d2bc;
+      --muted: #8a7560;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+      background: var(--light);
+      color: var(--primary);
+      min-height: 100vh;
+    }
+    .header {
+      background: linear-gradient(160deg, var(--primary) 0%, #5c3d24 100%);
+      padding: 28px 20px 24px;
+      text-align: center;
+      color: white;
+    }
+    .header-label {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+    .header p { font-size: 13px; opacity: 0.7; }
+    .main { padding: 16px; max-width: 480px; margin: 0 auto; }
+    .progress-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      margin: 16px 0 6px;
+    }
+    .progress-track {
+      height: 6px;
+      background: var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--secondary), var(--accent));
+      border-radius: 6px;
+      transition: width 0.4s cubic-bezier(.4,0,.2,1);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 2px 16px rgba(61,43,31,0.08);
+    }
+    .theme-tag {
+      display: inline-block;
+      background: var(--light);
+      border: 1px solid var(--border);
+      color: var(--secondary);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 4px 11px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+    }
+    .question {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .choices { display: flex; flex-direction: column; gap: 9px; }
+    .choice {
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 13px 16px;
+      font-size: 15px;
+      line-height: 1.35;
+      color: var(--primary);
+      text-align: left;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .choice:active { opacity: 0.85; }
+    .choice.correct {
+      background: var(--correct-bg);
+      border-color: var(--correct);
+      color: var(--correct);
+      font-weight: 600;
+    }
+    .choice.wrong {
+      background: var(--wrong-bg);
+      border-color: var(--wrong);
+      color: var(--wrong);
+    }
+    .expl {
+      display: none;
+      margin-top: 16px;
+      padding: 13px 15px;
+      background: #fffbf0;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--primary);
+    }
+    .expl.show { display: block; }
+    .expl strong { color: var(--secondary); }
+    .btn-next {
+      display: none;
+      width: 100%;
+      margin-top: 16px;
+      padding: 15px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      border-radius: 13px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn-next.show { display: block; }
+    .btn-next:active { opacity: 0.88; }
+    .score-screen { display: none; }
+    .score-screen.show { display: block; }
+    .q-screen.hidden { display: none; }
+    .score-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 20px 24px;
+      box-shadow: 0 2px 16px rgba(61,43,31,0.08);
+      text-align: center;
+    }
+    .score-emoji { font-size: 52px; line-height: 1; margin-bottom: 12px; }
+    .score-ring {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--primary), var(--secondary));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 6px 24px rgba(61,43,31,0.28);
+    }
+    .score-num { font-size: 52px; font-weight: 900; color: white; line-height: 1; }
+    .score-denom { font-size: 15px; color: var(--accent); margin-top: 2px; font-weight: 600; }
+    .score-title { font-size: 20px; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+    .score-msg { font-size: 15px; line-height: 1.55; color: var(--muted); margin-bottom: 24px; }
+    .btn-restart {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      border-radius: 13px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-restart:active { opacity: 0.88; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-label">🐴 Galop 6 – Mode difficile</div>
+  <h1>QCM du jour</h1>
+  <p>20 juin 2026 · 10 questions</p>
+</div>
+
+<div class="main">
+  <div class="q-screen" id="qScreen">
+    <div class="progress-row">
+      <span id="qLabel">Question 1 / 10</span>
+      <span id="sLabel">Score : 0</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill" style="width:10%"></div>
+    </div>
+    <div class="card">
+      <div class="theme-tag" id="themeTag">Thème</div>
+      <div class="question" id="questionText"></div>
+      <div class="choices" id="choicesBox"></div>
+      <div class="expl" id="expl"></div>
+      <button class="btn-next" id="btnNext" onclick="goNext()">Question suivante →</button>
+    </div>
+  </div>
+
+  <div class="score-screen" id="scoreScreen">
+    <div class="score-card">
+      <div class="score-emoji" id="scoreEmoji"></div>
+      <div class="score-ring">
+        <div class="score-num" id="scoreNum">0</div>
+        <div class="score-denom">/ 10</div>
+      </div>
+      <div class="score-title" id="scoreTitle"></div>
+      <div class="score-msg" id="scoreMsg"></div>
+      <button class="btn-restart" onclick="restart()">🔄 Recommencer le QCM</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const Q = [
+  {
+    theme: "🧠 Éthologie",
+    q: "Un cheval présente les oreilles plaquées en arrière, la queue serrée contre les fesses et le corps rigide. Quelle émotion exprime-t-il le plus probablement ?",
+    choices: [
+      "Il est détendu et cherche le contact avec le cavalier",
+      "Il exprime la peur, la menace ou une douleur",
+      "Il invite ses congénères à jouer",
+      "Il signale une fatigue musculaire après l'effort"
+    ],
+    correct: 1,
+    expl: "<strong>Les oreilles plaquées en arrière</strong> sont le signal d'alerte le plus lisible du cheval : il menace, a peur ou souffre. La queue serrée et la tension corporelle renforcent ce message. Reconnaître ces signaux est fondamental pour anticiper les réactions du cheval et préserver la sécurité du cavalier."
+  },
+  {
+    theme: "🏇 Culture générale",
+    q: "Quel écuyer français est l'auteur de 'L'École de Cavalerie' (1733), ouvrage fondateur de l'équitation classique européenne ?",
+    choices: [
+      "Antoine de Pluvinel",
+      "François Robichon de La Guérinière",
+      "Xénophon",
+      "Federico Grisone"
+    ],
+    correct: 1,
+    expl: "<strong>François Robichon de La Guérinière</strong> (1688–1751) est considéré comme le père de l'équitation classique. Il a codifié l'épaule-en-dedans et posé les bases de la haute école. Son ouvrage reste une référence à l'École Espagnole de Vienne. Antoine de Pluvinel (1555–1620), son prédécesseur, avait introduit une approche plus douce que les maîtres italiens."
+  },
+  {
+    theme: "👁 Anatomie",
+    q: "Le jarret du cheval correspond anatomiquement à quelle articulation chez l'être humain ?",
+    choices: [
+      "Le genou",
+      "La hanche",
+      "La cheville et le talon",
+      "Le coude"
+    ],
+    correct: 2,
+    expl: "<strong>Le jarret correspond à la cheville et au talon humain</strong>. Le cheval est digitigrade : il marche sur l'extrémité de ses doigts. Le grasset (au-dessus du jarret) correspond au genou humain, et la cuisse du cheval à la cuisse humaine. Maîtriser ces analogies anatomiques est exigé au programme théorique du Galop 6."
+  },
+  {
+    theme: "🌿 Santé / Pathologie",
+    q: "Parmi ces signes cliniques, lequel est caractéristique d'une fourbure aiguë ?",
+    choices: [
+      "Gonflement chaud localisé au-dessus du sabot avec boiterie montée",
+      "Posture antalgique (antérieurs avancés), sabot brûlant et pouls digital fort",
+      "Plaie ouverte de la fourchette avec écoulement purulent",
+      "Gonflement du boulet uniquement après l'exercice"
+    ],
+    correct: 1,
+    expl: "<strong>La fourbure (laminite)</strong> est une inflammation des lames sensitives du sabot. Signes aigus : posture antalgique (antérieurs avancés pour décharger les lames), sabot brûlant, pouls digital bondissant, répugnance à se déplacer. Causes : alimentation trop riche, herbe de printemps, Cushing, stress. Dans les cas graves, la troisième phalange peut basculer : urgence vétérinaire."
+  },
+  {
+    theme: "🌾 Alimentation",
+    q: "Pour un cheval de 500 kg au travail modéré, quelle est la ration minimale de fourrage recommandée par jour ?",
+    choices: [
+      "2 à 3 kg de foin par jour",
+      "4 à 5 kg de foin par jour",
+      "7,5 à 10 kg de foin par jour (1,5 à 2 % du poids vif)",
+      "15 à 18 kg de foin par jour"
+    ],
+    correct: 2,
+    expl: "<strong>La ration minimale est 1,5 % du poids vif</strong> en matière sèche, soit 7,5 kg pour 500 kg. L'idéal est 2 % (10 kg). Le fourrage constitue la base irremplaçable de la ration : il assure le transit, prévient les ulcères et les comportements stéréotypés. Les concentrés ne remplacent jamais le foin."
+  },
+  {
+    theme: "🏇 Technique équestre",
+    q: "Qu'est-ce que le 'rassembler' en dressage ?",
+    choices: [
+      "Une allure de travail à vitesse régulière, sans engagement particulier des hanches",
+      "Un exercice où le cheval reporte son poids sur les hanches, s'allège dans l'avant-main et raccourcit ses allures tout en maintenant l'impulsion",
+      "Le fait de regrouper plusieurs chevaux en troupeau dans un paddock",
+      "Une phase de récupération imposée en fin de séance"
+    ],
+    correct: 1,
+    expl: "<strong>Le rassembler</strong> est l'aboutissement du travail de dressage : les hanches s'abaissent (engagement des postérieurs sous la masse), l'encolure se relève, le cheval s'allège dans le devant. Les foulées se raccourcissent mais l'énergie reste présente. C'est la condition nécessaire aux airs au-dessus du sol et à la haute école."
+  },
+  {
+    theme: "🔨 Maréchalerie",
+    q: "À quelle fréquence le maréchal-ferrant doit-il normalement intervenir sur un cheval ferré ?",
+    choices: [
+      "Tous les 15 jours",
+      "Toutes les 6 à 8 semaines",
+      "Tous les 4 à 6 mois",
+      "Une fois par an, au printemps"
+    ],
+    correct: 1,
+    expl: "<strong>Toutes les 6 à 8 semaines</strong> est la fréquence standard : le sabot pousse d'environ 1 cm par mois. Au-delà de 8 à 10 semaines, le déséquilibre podal peut générer des problèmes locomoteurs (tendinites, arthrose...). Le pied nu nécessite également un parage régulier au même rythme."
+  },
+  {
+    theme: "📜 Règlement FFE",
+    q: "En concours de saut d'obstacles (CSO) selon le règlement FFE / FEI, que se passe-t-il en cas de chute du cavalier ?",
+    choices: [
+      "4 points de pénalité sont ajoutés",
+      "8 points de pénalité sont ajoutés",
+      "Le couple est immédiatement éliminé",
+      "Un avertissement est donné et le cavalier peut continuer"
+    ],
+    correct: 2,
+    expl: "<strong>La chute du cavalier entraîne l'élimination immédiate</strong> en CSO (règlement FFE/FEI). La chute du cheval seul est également éliminatoire. En revanche, un obstacle renversé vaut 4 points de pénalité, et le dépassement du temps accordé coûte 1 point par seconde (barème A au temps)."
+  },
+  {
+    theme: "💉 Santé / Vaccins",
+    q: "Quel vaccin est obligatoire pour que le cheval puisse participer aux compétitions sous l'égide de la FFE ?",
+    choices: [
+      "Le vaccin contre la rage uniquement",
+      "Le vaccin contre la grippe équine, avec primo-vaccination et rappels selon le protocole FFE",
+      "Le vaccin contre le tétanos uniquement",
+      "Le vaccin contre la rhinopneumonie et la gourme"
+    ],
+    correct: 1,
+    expl: "<strong>La vaccination antigrippale est obligatoire</strong> pour concourir sous l'égide de la FFE. Protocole : 2 injections à 21–92 jours d'intervalle, rappel entre 150 et 215 jours, puis rappels annuels. Le tétanos est fortement recommandé. Le carnet de vaccinations à jour doit être présenté à chaque compétition."
+  },
+  {
+    theme: "📋 Identification",
+    q: "Quel document officiel doit obligatoirement accompagner chaque équidé en France et dans l'Union Européenne ?",
+    choices: [
+      "Le livret équestre du propriétaire",
+      "La carte d'immatriculation délivrée par la préfecture",
+      "Le passeport équin SIRE, délivré par l'IFCE en France",
+      "Le certificat vétérinaire annuel de bonne santé"
+    ],
+    correct: 2,
+    expl: "<strong>Le passeport équin</strong> est obligatoire pour tout équidé dans l'UE depuis 2000. En France, il est délivré par le SIRE (Système d'Information Relatif aux Équidés), géré par l'IFCE. Il contient : signalements (robe, marques), vaccinations, traitements médicamenteux et le statut relatif à la destination alimentaire."
+  }
+];
+
+let cur = 0, score = 0, answered = false;
+
+function render() {
+  const q = Q[cur];
+  document.getElementById('themeTag').textContent = q.theme;
+  document.getElementById('questionText').textContent = q.q;
+  const box = document.getElementById('choicesBox');
+  box.innerHTML = '';
+  q.choices.forEach((c, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'choice';
+    btn.textContent = c;
+    btn.onclick = () => pick(i);
+    box.appendChild(btn);
+  });
+  document.getElementById('expl').className = 'expl';
+  document.getElementById('expl').innerHTML = '';
+  document.getElementById('btnNext').className = 'btn-next';
+  document.getElementById('progressFill').style.width = ((cur + 1) / Q.length * 100) + '%';
+  document.getElementById('qLabel').textContent = 'Question ' + (cur + 1) + ' / ' + Q.length;
+  document.getElementById('sLabel').textContent = 'Score : ' + score;
+  answered = false;
+}
+
+function pick(idx) {
+  if (answered) return;
+  answered = true;
+  const q = Q[cur];
+  document.querySelectorAll('.choice').forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.correct) b.classList.add('correct');
+    else if (i === idx) b.classList.add('wrong');
+  });
+  if (idx === q.correct) {
+    score++;
+    document.getElementById('sLabel').textContent = 'Score : ' + score;
+  }
+  const e = document.getElementById('expl');
+  e.innerHTML = q.expl;
+  e.className = 'expl show';
+  const nb = document.getElementById('btnNext');
+  nb.textContent = cur < Q.length - 1 ? 'Question suivante →' : 'Voir mon score →';
+  nb.className = 'btn-next show';
+}
+
+function goNext() {
+  cur++;
+  if (cur >= Q.length) showScore();
+  else render();
+}
+
+function showScore() {
+  document.getElementById('qScreen').classList.add('hidden');
+  document.getElementById('scoreScreen').className = 'score-screen show';
+  document.getElementById('scoreNum').textContent = score;
+  let emoji, title, msg;
+  if (score === 10) {
+    emoji = '🏆'; title = 'Score parfait !';
+    msg = "Tu maîtrises l'ensemble du programme Galop 6. Tu es prête à briller à la sélection du Haras de la Cense !";
+  } else if (score >= 8) {
+    emoji = '⭐'; title = 'Excellent !';
+    msg = 'De très solides bases ! Quelques points à peaufiner et tu es au niveau attendu pour la sélection.';
+  } else if (score >= 6) {
+    emoji = '👍'; title = 'Bien !';
+    msg = "Tu es sur la bonne voie. Continue à approfondir les thèmes qui t'ont résisté – la régularité paie !";
+  } else if (score >= 4) {
+    emoji = '💪'; title = 'Pas mal !';
+    msg = 'Des bases présentes, mais encore des lacunes à combler. Chaque jour de révision compte !';
+  } else {
+    emoji = '📚'; title = 'Continue !';
+    msg = "Tester ses lacunes, c'est déjà progresser ! Reprends les thèmes point par point et reviens demain plus armée.";
+  }
+  document.getElementById('scoreEmoji').textContent = emoji;
+  document.getElementById('scoreTitle').textContent = title;
+  document.getElementById('scoreMsg').textContent = msg;
+}
+
+function restart() {
+  cur = 0; score = 0; answered = false;
+  document.getElementById('qScreen').className = 'q-screen';
+  document.getElementById('scoreScreen').className = 'score-screen';
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
