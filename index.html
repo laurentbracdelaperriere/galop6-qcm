@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>QCM EPMSP – Animateur d'Équitation – 30 juillet 2026</title>
+  <title>QCM EPMSP – Animateur d'Équitation – 6 août 2026</title>
   <style>
     :root {
       --primary: #3d2b1f;
@@ -196,7 +196,7 @@
 <div class="header">
   <div class="header-label">🐴 EPMSP · AE · Mode difficile</div>
   <h1>QCM du jour</h1>
-  <p>30 juillet 2026 · 10 questions</p>
+  <p>6 août 2026 · 10 questions</p>
 </div>
 
 <div class="main">
@@ -235,123 +235,123 @@
 const Q = [
   {
     theme: "⚖️ Réglementation encadrement",
-    q: "Le responsable du centre équestre te demande d'encadrer seul(e), pendant son absence, une séance pour un groupe de cavaliers confirmés qui préparent une compétition de niveau Amateur. Aucun titulaire de diplôme de niveau IV (BPJEPS, BEES, DE) n'est présent sur la structure ce jour-là. Que dois-tu faire ?",
+    q: "Lors d'un stage d'été, le responsable de la structure présente l'AE aux familles comme « polyvalent sur tous les publics, toutes activités, tous types de chevaux » et lui confie en solo l'organisation complète d'une journée portes ouvertes, sans qu'aucun titulaire de diplôme de niveau IV ne soit présent sur place. L'AE peut-il accepter en s'appuyant sur cette polyvalence ?",
     choices: [
-      "Accepter : l'AE est un titre reconnu par l'État qui autorise à encadrer seul dès lors que le public est confirmé",
-      "Refuser d'assurer seul(e) cette séance : l'AE agit sous l'autorité pédagogique d'un titulaire de diplôme de niveau IV ou plus, et son périmètre exclut l'encadrement des pratiques compétitives de niveau Amateur et au-delà",
-      "Accepter, à condition de faire signer une décharge de responsabilité aux cavaliers présents",
-      "Accepter uniquement si la séance n'est pas rémunérée, la rémunération étant le seul critère qui encadre l'action de l'AE"
+      "Non : la polyvalence du référentiel de l'AE (âge du public, activité, effectif équin) ne supprime pas l'obligation d'exercer sous l'autorité pédagogique d'un titulaire d'un diplôme de niveau IV ou plus, qui doit rester identifiable et responsable de l'événement",
+      "Oui, la polyvalence mentionnée dans le référentiel du titre dispense justement l'AE de toute autorité pédagogique supérieure",
+      "Non, car la polyvalence du référentiel ne porte que sur l'encadrement en club équestre, jamais sur des événements extérieurs comme les portes ouvertes",
+      "Oui, à condition que l'AE ait plus de 3 ans d'expérience professionnelle, ce qui équivaut réglementairement à un niveau IV"
     ],
-    correct: 1,
-    expl: "Le titre d'<strong>Animateur d'Équitation</strong> délivré par la FFE permet d'initier et d'animer sous l'<strong>autorité pédagogique d'un titulaire de diplôme de niveau IV ou plus</strong> (BPJEPS, BEES, DE/DES), et exclut explicitement l'encadrement des pratiques compétitives de niveau Amateur et supérieur. L'absence du diplômé référent ne se comble pas avec une décharge : le périmètre de l'AE est fixé par le référentiel du titre lui-même, indépendamment de la rémunération."
+    correct: 0,
+    expl: "Le référentiel du titre professionnel <strong>Animateur d'Équitation</strong> (niveau 3 RNCP) le décrit comme polyvalent sur l'âge du public, l'activité encadrée et l'effectif équin — mais il exerce toujours sous l'<strong>autorité pédagogique d'un titulaire d'un diplôme, titre ou certificat de niveau IV ou plus</strong>. Cette polyvalence porte sur QUI il peut encadrer, jamais sur la possibilité de s'affranchir de cette autorité, quel que soit le format de l'événement (cours, stage, portes ouvertes...)."
   },
   {
     theme: "📋 EPMSP",
-    q: "Une stagiaire en formation FFE demande : « À quoi sert exactement l'EPMSP, puisque ce n'est pas un diplôme ? » Quelle est la réponse réglementairement exacte ?",
+    q: "Une stagiaire n'a pas encore obtenu son attestation de validation de l'EPMSP. Le tuteur, débordé, lui demande néanmoins d'encadrer seule un groupe de 6 cavaliers pendant qu'il s'absente pour une urgence. Que doit faire la stagiaire ?",
     choices: [
-      "L'EPMSP valide le niveau technique équestre (Galops) du stagiaire avant qu'il ne commence sa formation",
-      "L'EPMSP certifie que le stagiaire possède les compétences de sécurité (vis-à-vis des pratiquants et des tiers) suffisantes pour être placé sous l'autorité d'un tuteur en situation pédagogique, avant l'obtention du diplôme",
-      "L'EPMSP autorise le stagiaire à enseigner seul et sans tuteur dès sa validation",
-      "L'EPMSP remplace l'obligation d'assurance en responsabilité civile de la structure"
+      "Accepter, car l'alternance en formation autorise par défaut l'encadrement autonome de groupes, EPMSP ou non",
+      "Accepter, mais uniquement si elle réduit le groupe à 3 cavaliers maximum",
+      "Refuser d'encadrer seule le groupe : sans attestation EPMSP validée, elle ne peut intervenir qu'en observation pendant l'alternance, jamais en responsabilité autonome d'un groupe",
+      "Accepter, à condition de prévenir les parents des cavaliers concernés"
+    ],
+    correct: 2,
+    expl: "L'article <strong>R.212-4 du Code du sport</strong> impose que les stagiaires en formation soient placés sous l'autorité d'un tuteur et aient satisfait aux <strong>Exigences Préalables à la Mise en Situation Pédagogique (EPMSP)</strong>. Sans attestation EPMSP délivrée, l'alternance ne peut se dérouler qu'en <strong>observation</strong> : la stagiaire n'est pas habilitée à encadrer un groupe de façon autonome, quel que soit son effectif, même en cas d'urgence du tuteur."
+  },
+  {
+    theme: "🪖 Sécurité / Équipement",
+    q: "Une cavalière mineure participe à un exercice où elle mène son poney en longe à pied, sans jamais monter dessus. Une autre mineure, elle, fait un tour au pas à cru sur son poney. Laquelle des deux doit obligatoirement porter un casque aux normes en vigueur pendant l'exercice ?",
+    choices: [
+      "Aucune des deux, le port du casque n'étant obligatoire pour les mineurs qu'en compétition officielle",
+      "Les deux, car tout mineur présent en carrière doit porter un casque, monté ou non",
+      "Seulement celle qui mène le poney en longe, car le risque de morsure ou de coup de pied est plus élevé au sol qu'en selle",
+      "Seulement celle qui est en selle, la réglementation dispensant le port du casque pour un mineur non monté (« à pied »), sauf en voltige où d'autres règles s'appliquent"
+    ],
+    correct: 3,
+    expl: "Le port du casque conforme à la norme <strong>NF EN 1384</strong> est obligatoire pour tout mineur pratiquant l'équitation, à l'exception de la voltige (règles spécifiques) ou lorsque le pratiquant est <strong>à pied</strong>. La cavalière au sol qui mène son poney en longe sans monter n'est donc pas légalement tenue au port du casque, contrairement à celle qui est en selle, même à cru et au pas."
+  },
+  {
+    theme: "📄 Licence & assurance",
+    q: "Le parent d'un jeune cavalier licencié FFE te demande s'il peut renoncer à la garantie « accident corporel individuel » incluse dans la licence, tout en restant licencié. Que lui réponds-tu ?",
+    choices: [
+      "Non, aucune garantie de la licence FFE n'est modifiable, tout est un bloc obligatoire",
+      "Oui : seule la garantie de responsabilité civile est obligatoire pour le licencié (art. L.321-1 du Code du sport et suivants) ; la garantie « accident corporel individuel », elle, peut être refusée par le licencié",
+      "Non, la garantie individuelle accident est aussi obligatoire que la responsabilité civile depuis 2017",
+      "Oui, mais uniquement pour les licenciés majeurs, jamais pour les mineurs"
     ],
     correct: 1,
-    expl: "L'article <strong>R.212-1 du Code du sport</strong> précise que les personnes en formation peuvent exercer contre rémunération des fonctions d'enseignement sous l'<strong>autorité d'un tuteur</strong>, à condition d'avoir satisfait aux <strong>Exigences Préalables à la Mise en Situation Pédagogique (EPMSP)</strong>. Celles-ci portent sur la sécurité, l'hygiène et la réglementation — pas sur le niveau équestre — et ne dispensent jamais du tutorat tant que le diplôme n'est pas obtenu."
+    expl: "Le Code du sport (<strong>art. L.321-1 et suivants</strong>) ne rend obligatoire que la garantie de <strong>responsabilité civile</strong> pour tout licencié sportif. La garantie « individuelle accident corporel », proposée avec la licence FFE, peut être <strong>refusée</strong> par le licencié (ou son représentant légal pour un mineur), qui signe alors un document attestant en avoir été informé."
   },
   {
     theme: "🚨 Conduite à tenir – Accident",
-    q: "Pendant une séance en carrière, un cavalier chute et reste inconscient au sol ; son poney, affolé, continue de circuler librement à proximité du blessé. Quel enchaînement d'actions dois-tu suivre ?",
+    q: "Un cavalier se brûle la main en touchant par mégarde un fer chauffé par le maréchal-ferrant. La brûlure est rouge, sans plaie ouverte apparente. Quelle est la première conduite à tenir ?",
     choices: [
-      "Appeler immédiatement le 15, puis t'occuper du cheval, puis examiner le cavalier",
-      "Protéger d'abord (maîtriser ou écarter le poney, sécuriser la zone), alerter ensuite les secours, secourir la victime, puis la surveiller jusqu'à l'arrivée des secours",
-      "Placer immédiatement la victime en position latérale de sécurité avant toute autre chose, le cheval n'étant pas prioritaire",
-      "Attendre l'arrivée d'un moniteur diplômé avant d'intervenir, l'AE n'étant pas habilité à agir seul en cas d'accident"
+      "Refroidir la brûlure sous l'eau tempérée (15-25°C), pendant au moins 10 à 20 minutes, sans faire couler le jet directement dessus, puis retirer bagues/bijoux avant que la zone ne gonfle",
+      "Appliquer immédiatement une pommade grasse pour protéger la peau, avant tout passage à l'eau",
+      "Percer les éventuelles cloques pour évacuer le liquide et éviter l'infection",
+      "Frotter la zone avec un glaçon directement appliqué sur la peau pour stopper la douleur rapidement"
     ],
-    correct: 1,
-    expl: "La règle de référence est <strong>P.A.S. (Protéger – Alerter – Secourir)</strong>, complétée par la surveillance de la victime jusqu'à l'arrivée des secours. Ici, le risque de sur-accident vient du cheval en liberté près du blessé : il faut sécuriser la zone en premier, avant d'alerter puis de porter secours. Ne jamais rester passif en attendant un tiers diplômé : la sécurité immédiate relève de toute personne présente sur les lieux."
-  },
-  {
-    theme: "📞 Numéros d'urgence",
-    q: "La Formation Internationale du Haras de la Cense accueille des stagiaires venus de plusieurs pays européens. L'une d'elles te demande si elle peut composer un numéro d'urgence qu'elle connaît de son pays d'origine si un accident survient en France. Que lui réponds-tu ?",
-    choices: [
-      "Non, seuls les numéros français 15/17/18 fonctionnent en France, elle devra les mémoriser",
-      "Oui : le 112 est le numéro d'urgence unique valable dans tous les pays de l'Union européenne, il fonctionne en France en complément des 15 (SAMU), 17 (Police) et 18 (Pompiers)",
-      "Oui, mais uniquement depuis un téléphone fixe et jamais depuis un mobile étranger",
-      "Non, le 112 est réservé aux services vétérinaires d'urgence"
-    ],
-    correct: 1,
-    expl: "Le <strong>112</strong> est le numéro d'appel d'urgence unique européen, joignable gratuitement dans tous les États membres de l'UE, y compris depuis un mobile. Il vient en complément des numéros nationaux français (15 SAMU, 17 Police-Gendarmerie, 18 Pompiers) et non à leur place."
-  },
-  {
-    theme: "🩺 Santé / Certificat médical",
-    q: "Un cavalier présente son certificat médical pour sa première licence FFE. Que garantit exactement ce document ?",
-    choices: [
-      "Une aptitude physique totale et sans réserve à la compétition, validée par un électrocardiogramme systématique",
-      "L'absence de contre-indication décelée à l'examen clinique du jour, sous réserve de la sincérité des réponses données par le cavalier à l'interrogatoire — ce n'est pas un certificat d'aptitude",
-      "Une couverture d'assurance en responsabilité civile pour le cavalier",
-      "Que le cavalier n'a jamais eu d'accident équestre dans les cinq dernières années"
-    ],
-    correct: 1,
-    expl: "Le certificat porte précisément le nom de <strong>« certificat de non contre-indication »</strong> et non « certificat d'aptitude » : le médecin atteste l'absence de contre-indication décelée lors d'un examen clinique ponctuel, sur la base des réponses données par le patient à l'interrogatoire. Il ne garantit ni une aptitude cardiaque à l'effort ni une couverture d'assurance, qui relèvent d'obligations distinctes."
+    correct: 0,
+    expl: "Le geste de référence (Croix-Rouge française) est le <strong>refroidissement immédiat à l'eau tempérée</strong> (15-25°C, jamais glacée) pendant au moins 10 à 20 minutes, en dirigeant l'eau en amont de la brûlure. Il faut retirer bagues et bijoux avant l'apparition d'un œdème, ne jamais percer une cloque, ne rien appliquer de gras avant refroidissement complet, et ne jamais mettre de glace directement sur la peau."
   },
   {
     theme: "🚨 Conduite à tenir – Accident",
-    q: "Une bénévole se blesse profondément à la main sur un fil de clôture en réparant un paddock ; la plaie saigne abondamment. Quelle est la conduite à tenir ?",
+    q: "Une cavalière est piquée par une guêpe pendant le pansage. Quelques minutes plus tard, son visage gonfle rapidement et elle a du mal à respirer. Que fais-tu ?",
     choices: [
-      "Lui donner à boire pour compenser la perte de sang en attendant les secours",
-      "Comprimer immédiatement la plaie avec la paume de la main (en se protégeant : gant, tissu, sac plastique), allonger la victime, faire alerter les secours, et maintenir la compression jusqu'à leur arrivée",
-      "Poser un garrot serré au-dessus de la plaie avant toute autre chose, c'est le geste réflexe le plus sûr",
-      "La laisser debout pour qu'elle ne perde pas connaissance, la position allongée favorisant le saignement"
+      "Tu attends quelques minutes pour voir si les symptômes régressent avant d'agir, la plupart des piqûres n'étant pas graves",
+      "Tu lui fais boire beaucoup d'eau pour diluer le venin dans l'organisme",
+      "Tu reconnais les signes d'une urgence vitale potentielle (œdème rapide, détresse respiratoire) : tu alertes immédiatement le 15 en décrivant précisément ces signes, tu consultes son éventuel PAI/trousse d'urgence si disponible et tu restes auprès d'elle jusqu'à l'arrivée des secours",
+      "Tu lui administres toi-même un antihistaminique de la pharmacie du club, sans consulter son dossier"
     ],
-    correct: 1,
-    expl: "En cas d'hémorragie, il faut <strong>comprimer immédiatement la plaie</strong> (avec protection pour l'intervenant), <strong>allonger</strong> la victime, faire alerter les secours et maintenir la compression jusqu'à leur arrivée. Il ne faut <strong>jamais</strong> donner à boire à une victime d'hémorragie, ni poser un garrot en premier réflexe (geste dangereux réservé à des cas exceptionnels), ni la laisser debout."
+    correct: 2,
+    expl: "Un œdème du visage associé à une gêne respiratoire après une piqûre évoque une réaction allergique sévère (anaphylaxie), <strong>urgence vitale</strong> à traiter comme telle : alerte immédiate du 15 avec description précise des signes. Si la victime dispose d'un <strong>Projet d'Accueil Individualisé (PAI)</strong> prévoyant une trousse d'urgence, il doit être suivi tel que prescrit par du personnel désigné et formé — un encadrant ne doit jamais administrer de médicament de sa propre initiative, hors protocole prévu."
   },
   {
     theme: "📋 Construction de séance",
-    q: "Tu prépares ta fiche de séance pour l'épreuve EPMSP. Quels éléments sont exigés par le protocole de certification ?",
+    q: "Tu arrives en carrière pour animer ta séance et remarques qu'une barre d'obstacle traîne au sol en travers de la piste, non prévue dans ton déroulé. Les premiers cavaliers arrivent. Que fais-tu ?",
     choices: [
-      "Uniquement un déroulé technique des exercices équestres, sans autre document",
-      "Au moins 3 situations d'apprentissage pour une intervention de 15 minutes, accompagnées d'une analyse succincte des éléments de sécurité relatifs au lieu de pratique, aux caractéristiques du public et à l'activité",
-      "Le règlement intérieur complet de la structure et le plan de financement du club",
-      "La liste de tous les diplômes des encadrants du centre équestre, quelle que soit la séance"
+      "Tu démarres la séance normalement : la barre ne fait pas partie de ton exercice, donc elle ne concerne pas ta responsabilité",
+      "Tu demandes à un cavalier de la déplacer pendant que les autres commencent à travailler",
+      "Tu contournes simplement la zone concernée avec le groupe sans rien signaler, pour ne pas perdre de temps",
+      "Tu retires ou sécurises l'obstacle avant de faire évoluer qui que ce soit sur la piste, quitte à décaler légèrement le début de la séance, car l'analyse et la sécurisation du lieu de pratique priment sur le respect strict du timing prévu"
     ],
-    correct: 1,
-    expl: "L'épreuve EPMSP repose sur une <strong>fiche de séance</strong> comportant au minimum 3 situations d'apprentissage pour une intervention de 15 minutes, assortie d'une <strong>fiche d'analyse des éléments de sécurité</strong> tenant compte du lieu de pratique, des caractéristiques du public et de l'activité — suivie d'une mise en œuvre partielle de la séance et d'un entretien avec le jury."
+    correct: 3,
+    expl: "L'analyse des éléments de sécurité relatifs au <strong>lieu de pratique</strong> fait partie intégrante de la préparation ET de la conduite de séance attendues à l'EPMSP. Un danger identifié sur l'aire d'évolution doit être traité avant le début de l'activité, même au prix d'un léger retard — jamais délégué à un cavalier, qui n'a pas la responsabilité pédagogique, ni ignoré."
   },
   {
     theme: "⚖️ Réglementation encadrement",
-    q: "Un ami cavalier confirmé, non diplômé, propose d'accompagner bénévolement une sortie poney au club, sans jamais être payé pour cela. Est-ce légal ?",
+    q: "Un collègue affirme : « L'AE n'a pas le droit d'encadrer des cavaliers ayant dépassé le Galop 5, quel que soit le contexte. » Cette affirmation est-elle exacte au regard du référentiel du titre ?",
     choices: [
-      "Non : tout encadrement, même bénévole et gratuit, exige un diplôme reconnu par l'État",
-      "Oui : l'encadrement bénévole ne nécessite pas de diplôme obligatoire ; c'est dès qu'il y a rémunération — même occasionnelle ou secondaire — que la détention d'un diplôme, titre ou certificat de qualification devient obligatoire (art. L212-1 du Code du sport)",
-      "Oui, à condition qu'il ait au minimum le Galop 7",
-      "Non, sauf s'il exerce moins de deux heures par semaine"
+      "Oui, c'est la limite technique officielle inscrite dans le référentiel du titre AE",
+      "Non : le référentiel ne fixe aucun plafond de niveau technique (Galop) au public encadrable — l'AE est polyvalent sur l'âge du public, l'activité et l'effectif équin ; la seule limite formelle documentée est l'exclusion de l'encadrement des pratiques compétitives de niveau Amateur et supérieur, sous autorité pédagogique d'un niveau IV",
+      "Non, la limite réelle est le Galop 7, pas le Galop 5",
+      "Oui, mais uniquement pour les activités de saut d'obstacles, les autres disciplines n'étant pas concernées"
     ],
     correct: 1,
-    expl: "L'article <strong>L.212-1 du Code du sport</strong> impose un diplôme uniquement pour enseigner, animer ou encadrer <strong>contre rémunération</strong>, à titre principal ou secondaire, de façon habituelle, saisonnière ou occasionnelle. L'encadrement bénévole dans un club affilié à une fédération n'est pas soumis à cette obligation de diplôme, même si les fédérations encouragent la formation de leurs bénévoles."
+    expl: "Le référentiel du titre professionnel Animateur d'Équitation le décrit comme <strong>polyvalent sur l'âge du public, l'activité encadrée et l'effectif équin</strong> — il n'existe pas de plafond de niveau technique (Galop) formalisé. La limite documentée porte sur le type de pratique (exclusion des pratiques compétitives de niveau Amateur et supérieur) et sur l'exercice sous l'autorité pédagogique d'un diplômé de niveau IV ou plus."
   },
   {
     theme: "🚨 Conduite à tenir – Accident",
-    q: "Un cavalier chute et reste inconscient, mais il respire normalement et ne présente pas de vomissement. Que fais-tu, en plus d'avoir fait alerter les secours ?",
+    q: "Un cavalier chute et se plaint d'une douleur vive à l'avant-bras, qui présente une déformation visible. Il reste conscient. Que fais-tu, en plus d'alerter les secours ?",
     choices: [
-      "Tu le places en Position Latérale de Sécurité (PLS), pour libérer ses voies aériennes et éviter qu'il ne s'étouffe s'il venait à vomir, puis tu le surveilles jusqu'à l'arrivée des secours",
-      "Tu le maintiens strictement sur le dos sans le toucher, en attendant les secours, quelle que soit sa respiration",
-      "Tu le redresses en position assise pour l'aider à mieux respirer",
-      "Tu lui fais boire un peu d'eau sucrée pour le ranimer"
+      "Tu ne mobilises pas le membre déformé, tu ne tentes aucune manipulation ni réduction, tu laisses le cavalier dans la position où il se sent le moins mal, tu le rassures et tu surveilles son état jusqu'à l'arrivée des secours",
+      "Tu tentes de redresser doucement le bras dans son axe normal pour limiter la douleur en attendant les secours",
+      "Tu immobilises toi-même le bras avec une attelle de fortune fabriquée sur place, pour éviter tout mouvement",
+      "Tu lui donnes un antidouleur de la trousse de secours pour patienter"
     ],
     correct: 0,
-    expl: "La <strong>Position Latérale de Sécurité</strong> s'applique à toute victime <strong>inconsciente qui respire</strong> : elle prévient l'étouffement par la langue ou par des vomissements. La laisser sur le dos l'expose à un risque d'obstruction des voies aériennes ; la redresser assise ou lui faire boire quoi que ce soit sont des gestes proscrits chez une personne inconsciente."
+    expl: "Face à une suspicion de fracture, le geste attendu est de <strong>ne jamais mobiliser ni tenter de redresser</strong> le membre déformé : cela peut aggraver la lésion (nerfs, vaisseaux) et la douleur. On laisse la victime dans la position la moins inconfortable, on la rassure, on la surveille, et on laisse l'immobilisation et le traitement médicamenteux aux secours qualifiés."
   },
   {
-    theme: "📋 Construction de séance",
-    q: "Tu prépares une séance de découverte pour un groupe de 6 enfants de 8 ans, dont un enfant présentant un trouble de l'attention. Comment traiter cette particularité dans ta fiche de séance EPMSP ?",
+    theme: "🩺 Santé / Accueil du public",
+    q: "Avant un stage, un parent te remet le Projet d'Accueil Individualisé (PAI) de son enfant asthmatique, avec une trousse d'urgence contenant un bronchodilatateur. Quelle est ta responsabilité d'AE vis-à-vis de ce document ?",
     choices: [
-      "Ne rien mentionner de spécifique, pour ne pas stigmatiser l'enfant, et dérouler une séance strictement identique pour tout le groupe",
-      "Adapter les situations d'apprentissage et l'organisation de l'espace aux caractéristiques du public (consignes courtes et répétées, surveillance renforcée, poney adapté) et faire figurer cette analyse de risque spécifique dans la fiche de séance",
-      "Refuser d'accueillir cet enfant tant qu'un professionnel médical n'est pas présent sur place",
-      "Confier cet enfant à un parent accompagnateur pendant toute la durée de la séance, sans autre adaptation"
+      "Le PAI ne concerne que le cadre scolaire, il n'a aucune valeur dans un centre équestre ou un accueil collectif de mineurs",
+      "Confier systématiquement la responsabilité de la trousse d'urgence aux parents, qui doivent rester sur place pendant toute la durée du stage",
+      "Prendre connaissance du protocole prévu par le PAI, savoir où se trouve la trousse d'urgence, et appliquer ou faire appliquer ce protocole en cas de crise, en alertant les secours si la situation le dépasse — sans jamais improviser un traitement hors de ce cadre",
+      "Refuser l'enfant au stage tant qu'aucun professionnel de santé n'est présent en permanence sur la structure"
     ],
-    correct: 1,
-    expl: "L'EPMSP exige explicitement que <strong>les caractéristiques du public soient prises en compte dans la préparation des séances</strong> et que la fiche d'analyse de sécurité en tienne compte. Adapter les consignes, l'espace et la surveillance — sans exclure l'enfant ni délester sa responsabilité pédagogique sur un tiers — est la réponse attendue d'un animateur garant de la sécurité de tous ses pratiquants."
+    correct: 2,
+    expl: "Le <strong>Projet d'Accueil Individualisé</strong> s'applique à tous les accueils collectifs de mineurs, centres équestres compris : il précise la conduite à tenir, la localisation de la trousse d'urgence et le protocole en cas de crise, élaboré avec la famille et les professionnels de santé. L'encadrant doit connaître ce protocole et savoir le déclencher (ou alerter les secours si dépassé), sans imposer la présence permanente des parents ni improviser un traitement médical hors cadre prévu."
   }
 ];
 
