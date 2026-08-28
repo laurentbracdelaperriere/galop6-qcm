@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>QCM EPMSP – Animateur d'Équitation – 26 août 2026</title>
+  <title>QCM EPMSP – Animateur d'Équitation – 28 août 2026</title>
   <style>
     :root {
       --primary: #3d2b1f;
@@ -196,17 +196,17 @@
 <div class="header">
   <div class="header-label">🐴 EPMSP · AE · Mode difficile</div>
   <h1>QCM du jour</h1>
-  <p>26 août 2026 · 10 questions</p>
+  <p>28 août 2026 · 20 questions</p>
 </div>
 
 <div class="main">
   <div class="q-screen" id="qScreen">
     <div class="progress-row">
-      <span id="qLabel">Question 1 / 10</span>
+      <span id="qLabel">Question 1 / 20</span>
       <span id="sLabel">Score : 0</span>
     </div>
     <div class="progress-track">
-      <div class="progress-fill" id="progressFill" style="width:10%"></div>
+      <div class="progress-fill" id="progressFill" style="width:5%"></div>
     </div>
     <div class="card">
       <div class="theme-tag" id="themeTag">Thème</div>
@@ -234,127 +234,251 @@
 <script>
 const Q = [
   {
-    theme: "⚖️ Réglementation encadrement",
-    q: "Le gérant du centre demande à l'AE d'emmener seule un petit groupe de cavaliers confirmés en promenade sur les chemins environnants, en dehors de l'enceinte du centre, sans qu'aucun titulaire d'un diplôme professionnel n'en soit informé ni disponible.",
+    theme: "⚖️ Réglementation encadrement – Public spécifique",
+    q: "Une maison de retraite sollicite l'AE pour animer seule, chaque semaine, des séances de médiation équine (contact et soins du poney, sans monte) auprès de résidents âgés désorientés, certains sous traitement médical lourd, sans qu'aucun professionnel du soin ni personne qualifiée en médiation animale ne soit associé au projet.",
     choices: [
-      "Elle accepte : son habilitation AE suffit à encadrer n'importe quelle activité équestre, y compris hors du centre",
-      "Elle refuse d'encadrer seule cette sortie hors du centre sans qu'un titulaire de diplôme de niveau IV ou plus en soit informé et organise réellement l'autorité pédagogique nécessaire, et signale la situation au gérant",
-      "Elle accepte, à condition de faire signer à chaque cavalier une décharge de responsabilité avant de partir",
-      "Elle accepte mais raccourcit elle-même l'itinéraire prévu, sans en informer personne, pour limiter les risques"
-    ],
-    correct: 1,
-    expl: "L'AE encadre sous l'<strong>autorité pédagogique effective</strong> d'un titulaire de diplôme de niveau IV ou plus (Code du sport, art. L.212-1 et s.) ; sortir de l'enceinte du centre ne change rien à cette exigence. Une décharge signée par les cavaliers ne transfère pas la responsabilité pédagogique, et raccourcir seule l'itinéraire sans en informer personne n'est pas une réponse au problème de fond : l'AE doit alerter sa hiérarchie plutôt qu'improviser."
-  },
-  {
-    theme: "🚨 Conduite à tenir – Crise convulsive",
-    q: "Un stagiaire est pris de convulsions généralisées, tombe au sol et se raidit brutalement devant l'AE.",
-    choices: [
-      "Elle immobilise fermement ses membres pour l'empêcher de se blesser pendant les secousses",
-      "Elle glisse un objet plat entre ses dents pour l'empêcher de se mordre la langue",
-      "Elle protège sa tête et l'espace autour de lui sans le contenir ni rien placer dans sa bouche, chronomètre la crise, alerte les secours, puis le place en position latérale de sécurité s'il ne reprend pas conscience immédiatement après l'arrêt des secousses",
-      "Elle attend simplement la fin de la crise sans intervenir ni alerter, une crise convulsive se terminant toujours spontanément sans gravité"
+      "Elle accepte seule, une activité de contact sans monte étant par nature dépourvue de risque particulier",
+      "Elle accepte, à condition de demander par écrit aux familles une décharge de responsabilité",
+      "Elle alerte sa hiérarchie sur le fait qu'un public aussi spécifique nécessite une collaboration avec des professionnels qualifiés (soin, médiation) et l'encadrement d'un titulaire de diplôme de niveau IV ou plus, et n'engage pas seule cette activité en autonomie complète",
+      "Elle accepte, mais réduit le temps de contact avec les poneys à cinq minutes par résident pour limiter les risques"
     ],
     correct: 2,
-    expl: "Face à une crise convulsive, on ne <strong>contient jamais</strong> les mouvements et on ne place jamais rien dans la bouche (risque de blessure ou d'obstruction) : on protège la tête et l'environnement immédiat, on chronomètre, on alerte, puis on place en <strong>PLS</strong> après la crise si la conscience n'est pas immédiatement recouvrée. Une crise n'est jamais anodine par principe : elle doit toujours être signalée aux secours."
+    expl: "L'AE encadre sous l'<strong>autorité pédagogique effective</strong> d'un titulaire de diplôme de niveau IV ou plus (Code du sport, art. L.212-1 et s.) ; un public spécifique et vulnérable (personnes âgées désorientées, traitements médicaux) renforce l'exigence d'un encadrement qualifié et pluridisciplinaire. Ni une décharge des familles ni un simple raccourcissement du temps de contact ne remplacent cette exigence."
   },
   {
-    theme: "🩺 Santé – Certificat médical absent",
-    q: "Un nouveau stagiaire se présente pour son premier cours sans certificat médical d'aptitude ni attestation, affirmant ne pas être malade et vouloir commencer tout de suite \"pour ne pas perdre de temps\".",
+    theme: "🚨 Conduite à tenir – Malaise vagal",
+    q: "Pendant les travaux d'écurie par forte chaleur, un stagiaire devient soudain très pâle, se plaint d'avoir « des mouches devant les yeux » et de vertiges, puis vacille sur ses jambes sans perdre connaissance.",
     choices: [
-      "Elle le laisse participer à la séance du jour, le certificat pouvant être fourni dans les jours suivants",
-      "Elle refuse qu'il participe à l'activité tant que son aptitude n'est pas attestée dans les conditions prévues par la structure, et l'oriente vers la démarche à accomplir avant de pouvoir pratiquer",
-      "Elle le fait uniquement observer sans monter, ce qui permet de contourner l'exigence d'aptitude pour ce jour-là",
-      "Elle lui fait remplir et signer une déclaration sur l'honneur qu'elle rédige elle-même, en remplacement du document d'aptitude attendu"
+      "Elle l'allonge au sol dans un endroit aéré, surélève ses jambes, desserre ses vêtements, et surveille son état en attendant qu'il reprenne des couleurs, en alertant les secours s'il ne se rétablit pas rapidement ou perd connaissance",
+      "Elle le fait asseoir la tête entre les genoux et l'encourage à continuer les travaux dès que le vertige passe",
+      "Elle le fait boire immédiatement un grand verre d'eau fraîche debout pour le requinquer",
+      "Elle le laisse assis sur une botte de paille, penché en avant, sans autre intervention"
     ],
-    correct: 1,
-    expl: "L'accueil d'un pratiquant suppose que son aptitude à la pratique soit attestée dans les conditions prévues <strong>avant</strong> qu'il ne commence l'activité ; ni l'impatience du stagiaire, ni une simple observation sans pratique, ni une déclaration rédigée par l'encadrant lui-même ne remplacent cette exigence. L'AE oriente vers la démarche à accomplir plutôt que de faire une exception ponctuelle."
+    correct: 0,
+    expl: "Un malaise vagal se traite en allongeant la personne et en surélevant ses jambes pour favoriser le retour du sang vers le cerveau ; la position assise ou debout retarde la récupération. On ne fait jamais boire quelqu'un debout ou en cas de risque de perte de connaissance, et l'alerte des secours s'impose si la récupération n'est pas rapide."
   },
   {
-    theme: "📋 Construction de séance – Ratio encadrant/public",
-    q: "Pour une séance découverte, le gérant propose à l'AE d'accueillir seule un groupe deux fois plus nombreux que d'habitude, \"puisque ce sont de simples balades au pas en carrière\".",
+    theme: "🚨 Conduite à tenir – Électrisation",
+    q: "En passant près d'un enclos, l'AE voit un stagiaire crier et rester comme « collé » à la clôture électrique de la pâture, incapable de lâcher le fil qu'il vient de toucher accidentellement.",
     choices: [
-      "Elle accepte sans réserve, le pas en carrière étant une activité peu risquée qui justifie d'augmenter l'effectif",
-      "Elle évalue si elle peut réellement surveiller chaque cavalier et intervenir efficacement avec cet effectif, et refuse ou adapte (effectif réduit, appui supplémentaire) si ce n'est pas le cas, plutôt que d'accepter simplement parce que l'allure est lente",
-      "Elle accepte, à condition de positionner les cavaliers les plus jeunes au centre du groupe",
-      "Elle propose de superviser le groupe depuis l'extérieur de la carrière, pour avoir une vue d'ensemble, sans être positionnée à proximité immédiate des cavaliers"
+      "Elle attrape immédiatement le stagiaire par le bras pour l'éloigner du fil le plus vite possible",
+      "Elle verse de l'eau sur la clôture pour couper le courant plus rapidement",
+      "Elle attend que le stagiaire se dégage seul, le courant d'une clôture de pâture n'étant jamais suffisant pour empêcher quelqu'un de lâcher prise",
+      "Elle coupe d'abord le courant à la source (boîtier de la clôture) ou écarte le stagiaire du fil à l'aide d'un objet sec non conducteur en s'isolant elle-même du sol, avant de le toucher directement, puis alerte les secours"
     ],
-    correct: 1,
-    expl: "La sécurité d'une séance dépend de la capacité réelle de l'encadrant à surveiller et intervenir sur l'ensemble du groupe, pas seulement de l'allure pratiquée : un effectif doublé au pas peut déjà dépasser cette capacité si les cavaliers sont débutants ou hétérogènes. L'AE évalue cette faisabilité et ajuste plutôt que de se fier à la seule allure ou à une position d'observation éloignée qui retarderait son intervention."
+    correct: 3,
+    expl: "Toucher directement une victime encore en contact avec une source électrique expose le secouriste au même risque : il faut couper le courant à la source ou écarter la victime avec un objet sec non conducteur, en s'isolant du sol. L'eau est conductrice et aggrave le danger ; une clôture électrique peut provoquer une contraction musculaire empêchant de lâcher prise."
   },
   {
-    theme: "🛡️ Sécurité collective – Port du casque",
-    q: "Un stagiaire adulte refuse de mettre une bombe homologuée avant de monter, expliquant qu'il \"monte depuis toujours sans problème\" et préfère ne pas en porter.",
+    theme: "⚖️ Réglementation encadrement – Périmètre disciplinaire",
+    q: "Dans le cadre d'un stage multi-activités, l'AE est chargée d'encadrer seule, en plus des séances d'équitation, un atelier de tir à l'arc et une sortie VTT proposés le même après-midi, sans qu'aucun encadrant qualifié dans ces disciplines ne soit prévu.",
     choices: [
-      "Elle le laisse monter sans casque, le port du casque relevant du choix personnel d'un cavalier adulte expérimenté",
-      "Elle refuse qu'il monte sans un casque homologué correctement attaché, quelle que soit son expérience affichée, et lui explique pourquoi avant de le laisser pratiquer",
-      "Elle accepte, à condition qu'il reste uniquement au pas pendant toute la séance",
-      "Elle le laisse monter sans casque pour cette séance mais lui demande de s'en procurer un pour la suivante"
+      "Elle accepte d'encadrer l'ensemble du programme, son diplôme d'AE couvrant toute activité physique proposée dans le cadre du stage",
+      "Elle encadre uniquement les activités relevant de son champ de compétence équestre, et signale que le tir à l'arc et le VTT nécessitent un encadrant qualifié dans ces disciplines, faute de quoi ces ateliers ne peuvent pas être maintenus tels quels",
+      "Elle accepte, en demandant simplement aux stagiaires les plus âgés de superviser les plus jeunes pendant le tir à l'arc",
+      "Elle accepte d'encadrer le tir à l'arc et le VTT, mais uniquement pour les stagiaires majeurs"
     ],
     correct: 1,
-    expl: "Le port d'un <strong>casque homologué</strong> correctement attaché s'applique à tous les pratiquants, quelle que soit l'expérience ressentie ou affichée : l'expérience ne protège pas d'une chute imprévisible, ni au pas ni à une autre allure. L'AE n'accorde aucune exception, même temporaire ou limitée à une allure, sur cette règle."
+    expl: "L'habilitation d'Animateur d'Équitation couvre le champ des activités équestres ; elle ne confère aucune compétence à encadrer d'autres disciplines (tir à l'arc, VTT) qui requièrent leurs propres qualifications. Ni la supervision par des stagiaires ni une limitation aux majeurs ne remplacent l'encadrant qualifié requis."
   },
   {
-    theme: "🛡️ Sécurité du lieu – Départ d'incendie en écurie",
-    q: "L'AE, présente en écurie, sent une forte odeur de fumée et aperçoit un début d'incendie dans un box vide au fond du bâtiment. Plusieurs chevaux sont encore attachés dans les box voisins.",
+    theme: "🚨 Conduite à tenir – Traumatisme crânien différé",
+    q: "Une heure après une chute où il a reçu un coup à la tête (casque correctement porté, pas de perte de connaissance sur le moment), un stagiaire qui semblait aller bien se met à vomir et se plaint d'un mal de tête intense.",
     choices: [
-      "Elle ouvre immédiatement tous les box du bâtiment et relâche tous les chevaux en même temps dans la cour, pour les mettre à l'abri au plus vite",
-      "Elle alerte sans délai les secours (18/112), fait évacuer les personnes présentes, et sort si possible chaque cheval individuellement tenu en longe vers un espace extérieur sécurisé et fermé, sans jamais relâcher un cheval paniqué sans contrôle",
-      "Elle commence par tenter d'éteindre elle-même le départ de feu avant toute autre action, pour éviter que la situation ne s'aggrave avant l'arrivée des secours",
-      "Elle attend l'arrivée des secours avant de faire sortir qui que ce soit du bâtiment, pour ne pas gêner leur intervention"
+      "Elle considère l'incident clos puisqu'il n'y a pas eu de perte de connaissance au moment de la chute",
+      "Elle lui donne un antalgique de sa trousse de secours et le laisse se reposer allongé sans autre action",
+      "Elle prend au sérieux l'apparition différée de ces symptômes (vomissements, céphalée intense après un choc à la tête), alerte les secours ou fait orienter le stagiaire vers une consultation médicale en urgence, et le surveille sans le laisser seul en attendant",
+      "Elle le renvoie simplement chez lui avec un mot expliquant la situation à ses parents, sans consulter personne dans l'immédiat"
     ],
-    correct: 1,
-    expl: "Face à un départ d'incendie, l'alerte est <strong>immédiate</strong> (18/112) et la priorité va aux personnes puis aux chevaux, sortis un par un tenus en longe vers un espace extérieur sécurisé — jamais tous relâchés ensemble sans contrôle, ce qui créerait un risque de panique collective incontrôlable en cour. On n'attend pas les secours pour évacuer un bâtiment qui prend feu, mais on ne s'improvise pas non plus pompier au détriment de l'évacuation."
+    correct: 2,
+    expl: "Des symptômes différés après un choc à la tête (vomissements, céphalée intense, confusion) sont des signes d'alerte d'un possible traumatisme crânien grave, même sans perte de connaissance initiale : ils imposent une prise en charge médicale en urgence. On ne referme jamais le dossier sur la seule absence de perte de connaissance immédiate, et on n'administre pas de médicament de sa propre initiative."
   },
   {
-    theme: "🩺 Santé – Maladie contagieuse (teigne)",
-    q: "L'AE remarque sur l'un des chevaux utilisés en cours des zones de poils cassés et de croûtes évoquant une teigne, potentiellement transmissible à l'humain par contact direct.",
+    theme: "🩺 Hygiène – Conjonctivite contagieuse",
+    q: "L'AE remarque qu'un stagiaire a l'œil rouge, qui coule et colle légèrement le matin, évoquant une conjonctivite possiblement contagieuse. La structure utilise une même serviette accrochée au vestiaire pour plusieurs cavaliers.",
     choices: [
-      "Elle continue à utiliser ce cheval normalement pour les cours, la teigne équine ne concernant que les chevaux entre eux",
-      "Elle retire ce cheval de l'activité en attendant un avis vétérinaire, évite tout contact direct prolongé avec les zones suspectes, informe la structure, et rappelle les règles d'hygiène (matériel de pansage individualisé, lavage des mains) aux stagiaires ayant été en contact",
-      "Elle continue à utiliser le cheval, mais fait porter des gants uniquement aux stagiaires qui le préparent",
-      "Elle isole seulement le matériel de pansage utilisé sur ce cheval, sans rien changer d'autre à son utilisation en cours"
+      "Elle retire la serviette commune de l'usage partagé, rappelle de ne pas se toucher les yeux puis toucher du matériel commun (casque, longe) sans lavage de mains, et oriente le stagiaire vers une consultation médicale",
+      "Elle continue l'usage normal de la serviette commune, une conjonctivite n'étant jamais contagieuse par ce type de contact",
+      "Elle continue les cours normalement, sans rien changer, la conjonctivite étant une gêne purement locale sans risque pour les autres",
+      "Elle isole uniquement le casque du stagiaire concerné, sans intervenir sur le linge partagé ni sur l'hygiène des mains"
     ],
-    correct: 1,
-    expl: "La teigne équine est une <strong>zoonose</strong> transmissible à l'humain par contact direct ou par du matériel partagé : un cheval suspect est retiré de l'activité en attendant un avis vétérinaire, et l'hygiène est rappelée aux personnes ayant été en contact. Continuer à l'utiliser normalement, même avec des gants pour certains stagiaires, ou se limiter au matériel sans retirer le cheval de l'activité, ne suffit pas à prévenir ce risque."
+    correct: 0,
+    expl: "De nombreuses conjonctivites sont contagieuses par contact direct (mains, linge partagé) : on retire un objet d'hygiène partagé, on rappelle les règles de lavage des mains, et on oriente vers une consultation. Isoler uniquement le casque sans traiter le linge partagé ni l'hygiène des mains est insuffisant."
   },
   {
-    theme: "⚖️ Réglementation encadrement",
-    q: "Le club propose à l'AE de donner seule, contre rémunération, des cours particuliers réguliers de perfectionnement à un cavalier de bon niveau, sans qu'aucun titulaire d'un diplôme professionnel ne supervise ni n'encadre pédagogiquement cette activité.",
+    theme: "📋 Construction de séance – Matériel adapté",
+    q: "Pour une séance découverte avec de jeunes enfants, l'AE ne dispose que d'étriers et de bombes réglés pour des tailles adultes, faute de stock adapté. La fiche de séance prévoit une mise en selle avec petit trot.",
     choices: [
-      "Elle accepte : la rémunération concerne le club et non sa qualification personnelle, qui reste valable dans tous les cas",
-      "Elle refuse d'assurer seule, de façon autonome et sans autorité pédagogique effective d'un titulaire de diplôme de niveau IV ou plus, une activité d'enseignement rémunérée : son habilitation AE ne se substitue pas à un diplôme professionnel pour ce type d'encadrement autonome",
-      "Elle accepte, à condition de facturer elle-même directement le cavalier plutôt que de passer par le club",
-      "Elle accepte, en demandant simplement au club de l'assurer spécifiquement pour ce type de cours"
+      "Elle maintient la séance telle que prévue, en resserrant les sangles au maximum pour compenser",
+      "Elle fait chausser aux enfants deux paires de chaussettes supplémentaires pour combler l'écart de taille des étriers",
+      "Elle maintient la mise en selle et le trot prévus, mais reste positionnée plus près du groupe qu'à l'habitude pour compenser",
+      "Elle adapte la séance (report du trot, activités à pied ou au pas encadrées de très près, recherche immédiate de matériel à la bonne taille) plutôt que d'utiliser un équipement de sécurité et des étriers inadaptés à la morphologie des enfants"
     ],
-    correct: 1,
-    expl: "L'AE encadre sous l'<strong>autorité pédagogique effective</strong> d'un titulaire de diplôme de niveau IV ou plus (Code du sport, art. L.212-1 et s.) ; son habilitation ne lui confère pas la qualification requise pour assurer seule, de façon autonome, un enseignement rémunéré sans ce cadre. Ni le mode de facturation, ni une assurance spécifique, ne régularisent une situation où l'autorité pédagogique effective d'un diplômé fait défaut."
+    correct: 3,
+    expl: "Un casque mal ajusté ou des étriers inadaptés à la taille du cavalier compromettent la sécurité (protection insuffisante, pied pouvant se coincer) : on adapte le contenu de la séance à ce que le matériel réellement disponible permet de sécuriser, plutôt que de forcer un ajustement approximatif. Une proximité accrue de l'encadrant ne compense pas un équipement inadapté."
   },
   {
-    theme: "🚨 Conduite à tenir – Projection oculaire",
-    q: "En pansant son cheval, un stagiaire reçoit une projection de poussière dans l'œil, qui devient rouge et larmoyant ; il se frotte vigoureusement pour \"faire sortir\" ce qu'il sent.",
+    theme: "🚨 Conduite à tenir – Hémorragie externe",
+    q: "Un stagiaire reçoit un coup de sabot à la cuisse ; la plaie saigne abondamment et le sang continue à couler malgré le temps qui passe.",
     choices: [
-      "Elle le laisse continuer à se frotter l'œil, ce geste aidant naturellement à évacuer le corps étranger",
-      "Elle l'empêche de se frotter l'œil, rince abondamment à l'eau claire en gardant la paupière ouverte, du coin interne vers l'externe, et l'oriente vers une consultation si la gêne persiste ou si un corps étranger reste visible",
-      "Elle tente elle-même de retirer le corps étranger avec un mouchoir propre, pour éviter d'attendre",
-      "Elle applique une compresse sèche fermée sur l'œil et attend que ça passe avant d'agir davantage"
+      "Elle applique un garrot serré au-dessus de la plaie en premier réflexe, avant toute autre chose",
+      "Elle comprime fermement la plaie directement avec un tissu propre ou sa main protégée, maintient la compression en continu, alerte les secours, et n'envisage un garrot qu'en dernier recours si la compression manuelle est impossible ou inefficace",
+      "Elle nettoie d'abord la plaie à l'eau pour voir son étendue avant de faire quoi que ce soit d'autre",
+      "Elle surélève simplement la jambe sans exercer aucune compression, en attendant l'arrivée des secours"
     ],
     correct: 1,
-    expl: "Se frotter un œil irrité par un corps étranger risque d'aggraver une éraflure de la cornée : l'AE empêche ce geste, rince à l'eau claire (du coin interne vers l'externe) et oriente vers une consultation si la gêne persiste ou si un corps étranger reste visible. Elle ne tente jamais de retirer elle-même un corps étranger oculaire avec un objet, y compris un mouchoir, ce geste pouvant blesser l'œil davantage."
+    expl: "Face à une hémorragie externe abondante, le geste de premier recours est la <strong>compression directe</strong> de la plaie, maintenue en continu, avec alerte immédiate des secours ; le garrot reste une solution de dernier recours. Nettoyer la plaie avant de la comprimer, ou se contenter de surélever le membre, retarde un geste qui doit être immédiat."
   },
   {
-    theme: "🚨 Conduite à tenir – Protéger avant secourir",
-    q: "Lors d'une sortie encadrée à proximité d'une route, un cavalier chute et son cheval se retrouve sur la chaussée, désorienté, pendant qu'un véhicule approche au loin.",
+    theme: "⚖️ Réglementation encadrement – Autorité pédagogique",
+    q: "Dans le cadre d'un partenariat scolaire (cycle EPS équitation), l'AE doit encadrer seule un groupe d'élèves. L'enseignant de l'établissement reste dans les gradins sans intervenir, et aucun titulaire de diplôme d'équitation de niveau IV ou plus n'est présent au club ce jour-là.",
     choices: [
-      "Elle se précipite en priorité vers le cavalier tombé pour évaluer son état, avant de s'occuper de la présence du cheval sur la route",
-      "Elle sécurise d'abord la zone (signaler le danger, faire ralentir ou arrêter la circulation si possible, écarter le cheval de la chaussée en toute sécurité) avant d'examiner le cavalier, puis alerte les secours si nécessaire",
-      "Elle laisse le cheval se calmer seul le temps de s'occuper du cavalier, un cheval finissant toujours par s'immobiliser spontanément",
-      "Elle envoie un stagiaire du groupe seul vers la route pour gérer la circulation pendant qu'elle s'occupe du cavalier"
+      "Elle accepte : la présence de l'enseignant scolaire dans les gradins suffit à couvrir l'encadrement de l'activité équestre",
+      "Elle accepte, en demandant à l'enseignant scolaire de signer une décharge couvrant l'activité équestre",
+      "Elle vérifie qu'un titulaire de diplôme de niveau IV ou plus assure bien l'autorité pédagogique effective de l'activité équestre, l'enseignant scolaire présent n'ayant pas cette qualification ; à défaut, elle signale la situation avant de débuter la séance",
+      "Elle accepte, à condition de limiter la séance à des exercices uniquement à pied, sans aucune monte"
+    ],
+    correct: 2,
+    expl: "Un enseignant scolaire présent, même responsable du groupe sur le plan scolaire, n'a pas la qualification équestre requise pour assurer l'autorité pédagogique de l'activité : celle-ci doit être assurée par un titulaire de diplôme de niveau IV ou plus. Une décharge signée par l'enseignant ne régularise pas l'absence de cette autorité pédagogique qualifiée."
+  },
+  {
+    theme: "🛡️ Sécurité du lieu – Matériel de saut",
+    q: "En traversant la carrière pour installer sa séance, l'AE remarque que des barres et des chandeliers du parcours précédent traînent éparpillés sur le bord de la piste, alors qu'un groupe va évoluer au trot et au galop juste après.",
+    choices: [
+      "Elle range et dégage le matériel non utilisé de la zone d'évolution avant de commencer la séance, pour supprimer ce risque de trébuchement ou de choc, plutôt que de compter sur la seule vigilance des cavaliers",
+      "Elle laisse le matériel en place le temps de sa séance, les cavaliers pouvant simplement veiller à les éviter",
+      "Elle déplace uniquement les chandeliers les plus hauts, en laissant les barres au sol car « on ne trébuche pas sur du plat »",
+      "Elle commence la séance normalement et prévoit de ranger le matériel à la pause, une fois le premier exercice terminé"
+    ],
+    correct: 0,
+    expl: "Du matériel non utilisé laissé sur la zone d'évolution constitue un risque de chute ou de choc pour cheval et cavalier, en particulier aux allures rapides : il doit être dégagé avant que le groupe n'évolue, et non laissé en fonction de la seule vigilance attendue des cavaliers, ni reporté après un premier exercice."
+  },
+  {
+    theme: "🚨 Conduite à tenir – Hypothermie",
+    q: "Lors d'une sortie en extérieur, en traversant un point d'eau peu profond habituellement praticable, un cheval glisse et son cavalier tombe dans l'eau ; il se relève trempé mais semble choqué et frissonne fortement dans le vent.",
+    choices: [
+      "Elle continue la sortie comme prévu, un simple passage dans l'eau ne justifiant pas d'interrompre le programme",
+      "Elle lui fait immédiatement reprendre le trot pour qu'il se réchauffe par l'effort",
+      "Elle attend simplement qu'il sèche naturellement en poursuivant l'itinéraire prévu au même rythme",
+      "Elle sécurise d'abord la situation (cheval, cavalier hors de l'eau), évalue l'état du cavalier, le met rapidement à l'abri du vent, le fait changer si possible de vêtements secs ou le couvre, et adapte ou écourte la sortie plutôt que de le laisser trempé et frissonnant poursuivre normalement"
+    ],
+    correct: 3,
+    expl: "Un cavalier trempé et frissonnant dans le vent est exposé à un risque d'hypothermie qui s'aggrave avec le temps et l'exposition : il faut le mettre à l'abri, le réchauffer et adapter le programme, plutôt que de poursuivre normalement ou de compter sur l'effort physique pour le réchauffer, ce qui n'est pas une réponse fiable."
+  },
+  {
+    theme: "📋 Construction de séance – Groupe hétérogène",
+    q: "L'AE reçoit exceptionnellement un groupe mêlant des cavaliers grands débutants et d'autres déjà autonomes au trot et au galop. Elle prévoit de dérouler sa fiche de séance habituelle, identique pour tout le groupe, « pour ne pas compliquer l'organisation ».",
+    choices: [
+      "Elle applique la séance identique prévue, un contenu commun étant plus simple à encadrer pour un seul animateur",
+      "Elle adapte sa fiche de séance pour différencier les objectifs et les exercices selon les niveaux réels du groupe (ateliers différenciés, allures adaptées), plutôt que d'imposer un contenu unique qui exposerait les uns à un exercice trop difficile et les autres à un exercice sans intérêt pédagogique",
+      "Elle place les débutants uniquement en observation pendant toute la séance, sans qu'ils pratiquent",
+      "Elle sépare le groupe en deux, mais confie l'un des deux sous-groupes à un stagiaire du club pour gagner du temps"
     ],
     correct: 1,
-    expl: "Le premier réflexe face à un accident est de <strong>protéger avant de secourir</strong> : un danger persistant (cheval désorienté sur une route avec circulation) doit être neutralisé en priorité, sinon la situation peut s'aggraver (sur-accident) avant même de pouvoir s'occuper de la victime. On ne délègue jamais cette sécurisation à un stagiaire non formé, lui-même exposé au danger."
+    expl: "La sécurité et la pertinence pédagogique d'une séance reposent sur l'adaptation du contenu au niveau réel de chaque cavalier : un exercice unique pour un groupe hétérogène expose les débutants à un danger et prive les plus avancés d'apprentissage utile. Ni l'observation passive prolongée ni la délégation à un stagiaire non qualifié ne sont acceptables."
+  },
+  {
+    theme: "🚨 Conduite à tenir – Alerte des secours",
+    q: "Un stagiaire sourd est victime d'une chute nécessitant l'intervention des secours ; son accompagnant habituel, qui pratique la langue des signes, n'est pas présent ce jour-là.",
+    choices: [
+      "Elle renonce à alerter les secours tant que personne ne peut communiquer en langue des signes avec le stagiaire",
+      "Elle attend le retour de l'accompagnant habituel avant toute alerte, pour permettre une communication complète avec le blessé",
+      "Elle alerte les secours par les moyens disponibles (appel vocal 15/18/112 en décrivant précisément la situation), sachant qu'il existe aussi le numéro d'urgence 114 accessible par SMS ou visio pour les personnes sourdes ou malentendantes, et prend en charge le stagiaire avec les gestes de premiers secours pendant l'attente",
+      "Elle demande à un autre stagiaire d'improviser une traduction, sans alerter les secours dans l'immédiat"
+    ],
+    correct: 2,
+    expl: "L'alerte des secours (15, 18, 112) ne dépend pas de la capacité de communication directe avec la victime : l'AE décrit la situation observée. Le <strong>114</strong> est le numéro d'urgence dédié, accessible par SMS et visio, aux personnes sourdes ou malentendantes. Attendre un accompagnant ou improviser une traduction ne doit jamais retarder l'alerte."
+  },
+  {
+    theme: "🛡️ Sécurité du lieu – Animal en liberté",
+    q: "Pendant que l'AE encadre une séance montée en manège, le chien du club, habituellement calme, entre en courant dans l'enceinte et se met à aboyer près des jambes des chevaux.",
+    choices: [
+      "Elle interrompt immédiatement les exercices, fait arrêter les chevaux calmement, fait sortir le chien du manège ou le fait tenir par une personne extérieure au groupe monté, avant de reprendre la séance",
+      "Elle continue la séance sans interrompre les exercices, les chevaux du club étant réputés habitués à la présence de ce chien",
+      "Elle demande à un cavalier du groupe de descendre de cheval pour aller chasser le chien du manège",
+      "Elle accélère l'allure pour éloigner rapidement les chevaux du chien, plutôt que de s'arrêter"
+    ],
+    correct: 0,
+    expl: "Un animal imprévisible s'introduisant dans une zone d'évolution montée est un facteur de danger immédiat, même si l'animal est habituellement calme et les chevaux habitués : l'AE arrête l'activité et fait retirer l'élément perturbateur avant de reprendre. Faire descendre un cavalier pour chasser le chien, ou accélérer l'allure, augmente le risque."
+  },
+  {
+    theme: "🚨 Conduite à tenir – Étouffement (obstruction partielle)",
+    q: "Pendant une pause repas, un adulte accompagnateur porte les mains à la gorge, incapable de parler, mais tousse encore fort en essayant d'expulser un morceau de nourriture.",
+    choices: [
+      "Elle laisse la personne tousser seule, sans intervenir tant qu'elle tousse encore, quelle que soit l'efficacité de la toux",
+      "Elle réalise immédiatement des compressions abdominales fortes, sans laisser à la personne l'occasion de tousser seule",
+      "Elle fait boire un grand verre d'eau à la personne pour l'aider à faire descendre le morceau",
+      "Elle encourage la personne à continuer de tousser tant que la toux reste efficace, se tient prête à intervenir (claques dans le dos puis compressions abdominales) si la toux s'arrête ou devient inefficace, et alerte les secours si l'obstruction persiste"
+    ],
+    correct: 3,
+    expl: "Tant que la toux reste efficace, elle est le meilleur moyen d'expulser le corps étranger : on encourage à tousser sans intervenir brutalement, mais on reste prêt à agir (claques dans le dos, puis compressions abdominales) si la toux devient inefficace ou cesse. Faire boire un corps étranger dans les voies respiratoires est dangereux."
+  },
+  {
+    theme: "🩺 Santé – Pathologie chronique (diabète)",
+    q: "Un stagiaire diabétique doit, selon les informations transmises par ses parents, disposer en permanence de son matériel de contrôle et d'un encas sucré pendant les séances. Le jour même, il arrive sans son sac contenant ce matériel, « oublié dans la voiture d'un proche déjà reparti ».",
+    choices: [
+      "Elle le fait pratiquer normalement, cet oubli ponctuel ne changeant rien pour une seule séance",
+      "Elle ne le laisse pas pratiquer tant que le matériel nécessaire à la gestion de son diabète n'est pas disponible sur place, cherche une solution immédiate (encas sucré de la structure, contact des parents) et reste vigilante aux signes d'hypoglycémie pendant l'attente",
+      "Elle lui demande simplement de prévenir immédiatement s'il se sent mal, sans autre précaution particulière",
+      "Elle réduit l'intensité de la séance prévue, en le laissant pratiquer sans le matériel ni encas sucré à disposition"
+    ],
+    correct: 1,
+    expl: "Pour un stagiaire dont une pathologie chronique nécessite un matériel ou un encas spécifique en permanence, l'absence de ce matériel est un facteur de risque réel (hypoglycémie) qui ne se compense pas par une simple vigilance verbale ou une réduction d'intensité : l'AE sécurise la situation avant de faire pratiquer."
+  },
+  {
+    theme: "⚖️ Réglementation encadrement – Transport",
+    q: "Pour une sortie en concours, le gérant demande à l'AE de conduire elle-même le van transportant plusieurs chevaux, alors qu'elle ne détient ni le permis adapté au tonnage du véhicule ni de qualification pour le transport d'animaux vivants sur cette distance.",
+    choices: [
+      "Elle accepte de conduire, un simple trajet local ne nécessitant pas de vérifier ces éléments",
+      "Elle accepte, à condition qu'un collègue expérimenté l'accompagne sur le trajet sans conduire lui-même",
+      "Elle refuse de conduire ce véhicule tant que le permis requis et les conditions réglementaires de transport d'animaux vivants ne sont pas réunies, et signale la situation au gérant plutôt que de prendre le volant",
+      "Elle accepte de conduire uniquement l'aller, en demandant à quelqu'un d'autre de conduire le retour"
+    ],
+    correct: 2,
+    expl: "Conduire un véhicule nécessite de détenir le permis correspondant à sa catégorie et à son tonnage, indépendamment de la distance du trajet ; le transport d'animaux vivants obéit en outre à des conditions réglementaires propres. L'AE n'improvise pas cette conduite au prétexte d'un trajet court ou d'un accompagnateur non-conducteur."
+  },
+  {
+    theme: "🚨 Conduite à tenir – Brûlure chimique",
+    q: "En nettoyant du matériel, un stagiaire se renverse accidentellement du désinfectant concentré sur l'avant-bras, qui commence à rougir et à picoter fortement.",
+    choices: [
+      "Elle rince abondamment et immédiatement la zone à l'eau claire pendant plusieurs minutes, retire les vêtements imprégnés du produit, et consulte les indications de sécurité du produit (étiquette) tout en surveillant l'évolution de la brûlure",
+      "Elle applique immédiatement une pommade grasse sur la zone pour protéger la peau",
+      "Elle essuie simplement le produit avec un chiffon sec sans rincer, pour éviter de l'étaler davantage",
+      "Elle laisse sécher la zone à l'air libre sans rien faire, en attendant de voir si une réaction apparaît"
+    ],
+    correct: 0,
+    expl: "Une projection de produit chimique sur la peau se traite par un <strong>rinçage abondant et immédiat à l'eau claire</strong>, en retirant les vêtements imprégnés, en consultant les indications de sécurité du produit ; on ne recouvre jamais d'une pommade ni ne se contente d'essuyer à sec, ce qui laisse le produit actif au contact de la peau."
+  },
+  {
+    theme: "📋 Construction de séance – Anticipation météo",
+    q: "L'AE prépare une séance en extérieur pour un groupe de jeunes enfants. Sa fiche de séance ne prévoit aucune activité de repli ni lieu couvert en cas de dégradation météo soudaine, « le bulletin annonçant du beau temps toute la journée ».",
+    choices: [
+      "Elle considère que la prévision favorable rend inutile de prévoir une solution de repli",
+      "Elle se contente de garder son téléphone à portée de main pour suivre l'évolution météo en temps réel, sans prévoir d'alternative concrète",
+      "Elle prévoit de raccourcir simplement la séance de quelques minutes si le temps se dégrade, sans prévoir de lieu de repli",
+      "Elle prévoit malgré tout une activité et un lieu de repli accessibles rapidement en cas de dégradation soudaine, une prévision météo favorable ne garantissant pas l'absence d'imprévu pendant la séance"
+    ],
+    correct: 3,
+    expl: "Une fiche de séance sécurisée anticipe les aléas prévisibles, dont la météo, indépendamment de la fiabilité apparente d'un bulletin : elle prévoit une activité et un lieu de repli mobilisables rapidement. Suivre la météo sans solution concrète, ou se limiter à raccourcir la séance, n'apporte pas de réponse à un risque soudain (orage, pluie violente)."
+  },
+  {
+    theme: "🚨 Conduite à tenir – Suivi de l'alerte",
+    q: "L'AE vient d'appeler le 15 pour un stagiaire inconscient qui respire. Le médecin régulateur lui donne des consignes précises à appliquer en attendant l'arrivée des secours, puis la conversation se poursuit.",
+    choices: [
+      "Elle raccroche dès qu'elle a noté l'essentiel des consignes, pour se consacrer entièrement au stagiaire",
+      "Elle applique les consignes données tout en restant en ligne avec le régulateur jusqu'à ce que celui-ci mette fin lui-même à l'appel, sachant qu'il peut ajuster ses instructions selon l'évolution de l'état du stagiaire",
+      "Elle transmet le téléphone à un stagiaire présent pour pouvoir se concentrer sur les gestes, sans se soucier de la suite de l'appel",
+      "Elle coupe l'appel dès que les secours confirment leur départ vers les lieux, jugeant que la suite ne la concerne plus"
+    ],
+    correct: 1,
+    expl: "C'est le régulateur médical qui met fin à l'appel, jamais l'appelant : il peut ajuster ses consignes en fonction de l'évolution de l'état de la victime, ce qui suppose de rester en ligne. Raccrocher de sa propre initiative, ou transmettre l'appel à une personne non responsable de la situation, prive de ce suivi essentiel."
   }
 ];
 let cur = 0, score = 0, answered = false;
+
+function fmtScore(n) {
+  return Number.isInteger(n) ? String(n) : n.toFixed(1);
+}
 
 function render() {
   const q = Q[cur];
@@ -374,7 +498,7 @@ function render() {
   document.getElementById('btnNext').className = 'btn-next';
   document.getElementById('progressFill').style.width = ((cur + 1) / Q.length * 100) + '%';
   document.getElementById('qLabel').textContent = 'Question ' + (cur + 1) + ' / ' + Q.length;
-  document.getElementById('sLabel').textContent = 'Score : ' + score;
+  document.getElementById('sLabel').textContent = 'Score : ' + score + ' / ' + Q.length;
   answered = false;
 }
 
@@ -389,7 +513,7 @@ function pick(idx) {
   });
   if (idx === q.correct) {
     score++;
-    document.getElementById('sLabel').textContent = 'Score : ' + score;
+    document.getElementById('sLabel').textContent = 'Score : ' + score + ' / ' + Q.length;
   }
   const e = document.getElementById('expl');
   e.innerHTML = q.expl;
@@ -408,18 +532,19 @@ function goNext() {
 function showScore() {
   document.getElementById('qScreen').classList.add('hidden');
   document.getElementById('scoreScreen').className = 'score-screen show';
-  document.getElementById('scoreNum').textContent = score;
+  const finalScore = (score / Q.length) * 10;
+  document.getElementById('scoreNum').textContent = fmtScore(finalScore);
   let emoji, title, msg;
-  if (score === 10) {
+  if (finalScore === 10) {
     emoji = '🏆'; title = 'Score parfait !';
     msg = "Réglementation, gestes d'urgence, sécurité du lieu et du matériel, santé, construction de séance : tout est maîtrisé. C'est exactement la rigueur que le jury EPMSP attend de toi.";
-  } else if (score >= 8) {
+  } else if (finalScore >= 8) {
     emoji = '⭐'; title = 'Excellent !';
     msg = "Très solide ! Reprends les questions manquées à tête reposée — ce sont souvent des nuances fines de réglementation ou de gestes d'urgence, faciles à ancrer définitivement.";
-  } else if (score >= 6) {
+  } else if (finalScore >= 6) {
     emoji = '👍'; title = 'Bien !';
     msg = "Bonne base. Reprends en détail les questions ratées : le jury attend une réponse immédiate et sûre, sans hésitation, sur les gestes d'urgence comme sur le périmètre de l'AE.";
-  } else if (score >= 4) {
+  } else if (finalScore >= 4) {
     emoji = '💪'; title = 'Pas mal !';
     msg = "Des acquis réels, mais encore des lacunes sur la réglementation ou la conduite à tenir en urgence. Reprends le livret pédagogique AE point par point avant la prochaine séance.";
   } else {
@@ -433,8 +558,8 @@ function showScore() {
 
 function restart() {
   cur = 0; score = 0; answered = false;
-  document.getElementById('qScreen').className = 'q-screen';
   document.getElementById('scoreScreen').className = 'score-screen';
+  document.getElementById('qScreen').classList.remove('hidden');
   render();
 }
 
